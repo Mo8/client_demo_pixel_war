@@ -44,17 +44,21 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    repo.getPixels().then((value) {
-      setState(() {
-        pixels = value;
-      });
-    });
+    loadPixels();
     repo.listenPixel().listen((event) {
       setState(() {
         pixels.add(event);
       });
     });
     super.initState();
+  }
+
+  void loadPixels() {
+    repo.getPixels().then((value) {
+      setState(() {
+        pixels = value;
+      });
+    });
   }
 
   void sendPixel() {
@@ -67,6 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
+        actions: [IconButton(onPressed: loadPixels, icon: const Icon(Icons.refresh))],
       ),
       body: Center(
         child: Zoom(
@@ -127,7 +132,6 @@ class _MyHomePageState extends State<MyHomePage> {
                           pickerColor: chooseColor,
                           onColorChanged: (value) {
                             setState(() {
-                              print(value.value);
                               chooseColor = value;
                             });
                           },
