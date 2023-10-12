@@ -1,16 +1,11 @@
-# client
+Demo app for pixel war game only localhost just for testing 
+For other host change the ip in the code
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#Install Flutter:
+[Follow tuto](https://flutter.dev/docs/get-started/install)
+#Install and launch Server: 
+[here](https://github.com/Mo8/server_pixel_war)
+#To run:
+```bash
+flutter run -d windows
+```
