@@ -12,7 +12,6 @@ class PixelRepository {
 
   Stream<Pixel> listenPixel() {
     return channel.stream.map((event) {
-      print(event);
       return Pixel.fromJson(jsonDecode(event));
     });
   }
@@ -28,7 +27,6 @@ class PixelRepository {
       final pixels = jsonDecode(json) as List<dynamic>;
       return pixels.map((e) => Pixel.fromJson(e)).toList();
     } catch (e) {
-      print(e);
       return [];
     }
 
